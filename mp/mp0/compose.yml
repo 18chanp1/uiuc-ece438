@@ -1,0 +1,7 @@
+services:
+  n1:
+    image: ece438:local
+    tty: true
+  n2:
+    image: ece438:local
+    tty: true

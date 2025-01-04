@@ -1,0 +1,18 @@
+services:
+  receiver:
+    image: ece438_v2:latest
+    tty: true
+    volumes:
+      - ./:/mp2
+    working_dir: /mp2
+    entrypoint: ./receiver.sh 8080 output
+  sender:
+    image: ece438_v2:latest
+    tty: true
+    volumes:
+      - ./:/mp2
+    working_dir: /mp2
+    entrypoint: ./sender.sh receiver 8080 Makefile 2806
+    # depends_on:
+    #   - receiver
+
